@@ -12,7 +12,7 @@ function fromPubKey(pubkey){
 
 function fromRedeemScript(redeemScript){
 	var keyHash = hash160(redeemScript);
-	return base58check,encode(keyHash, P2SH_ADDRESS_VERSION, 'hex');
+	return base58check.encode(keyHash, P2SH_ADDRESS_VERSION, 'hex');
 }
 
 function hash160(data){
