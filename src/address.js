@@ -3,7 +3,7 @@ var RIPEMD160 = require('ripemd160');
 var base58check = require('base58check');
 
 var P2PKH_ADDRESS_VERSION = '26';
-var P2SH_ADDRESS_VERSION = '05';
+var P2SH_ADDRESS_VERSION = '17';
 
 function fromPubKey(pubkey){
 	var keyHash = hash160(pubkey);
