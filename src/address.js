@@ -15,7 +15,7 @@ function fromPubKey(pubkey){
 }
 
 function hash160(data){
-	return new RIPEMD160().update(sha256(data, { asBytes: true })).digest();
+	return new RIPEMD160().update(Buffer.from(sha256(data, { asBytes: true }))).digest();
 }
 
 function checksum(keyHash){
