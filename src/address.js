@@ -5,7 +5,7 @@ var base58check = require('base58check');
 var P2PKH_ADDRESS_VERSION = 0x26;
 var P2SH_ADDRESS_VERSION = 0x05;
 
-Address.prototype.fromPubKey = function(pubkey){
+function fromPubKey(pubkey){
 	var keyHash = hash160(pubkey).writeInt8(P2PKH_ADDRESS_VERSION);
 	var chksum = checksum(keyHash);
 
@@ -22,4 +22,8 @@ function checksum(keyHash){
 	return new Buffer(sha256.x2(keyHash).substring(0, 4), 'hex');
 }
 
-module.exports = Address;
+module.exports = {
+
+	fromPubKey: fromPubKey
+
+};
