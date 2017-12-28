@@ -1,0 +1,29 @@
+{
+  "name": "bitcoingoldjs-lib",
+  "version": "1.0.0",
+  "description": "A javascript library for Bitcoin Gold.",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tadejgasparovic/bitcoingoldjs-lib.git"
+  },
+  "keywords": [
+    "bitcoin",
+    "gold",
+    "bitcoingold"
+  ],
+  "author": "Tadej Gašparovič",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tadejgasparovic/bitcoingoldjs-lib/issues"
+  },
+  "homepage": "https://github.com/tadejgasparovic/bitcoingoldjs-lib#readme",
+  "dependencies": {
+    "base58check": "^2.0.0",
+    "ripemd160": "^2.0.1",
+    "sha256": "^0.2.0"
+  }
+}
