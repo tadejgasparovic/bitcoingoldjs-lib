@@ -5,6 +5,24 @@ var base58check = require('base58check');
 var P2PKH_ADDRESS_VERSION = '26';
 var P2SH_ADDRESS_VERSION = '17';
 
+function toKeyHash(address){
+	try{
+		var addr = base58check.decode(address, 'hex');
+		return new Buffer(addr.data, 'hex');
+	}catch(e){
+		return null;
+	}
+}
+
+function validateAddress(address){
+	try{
+		var addr = base58check.decode(address, 'hex');
+		return addr.prefix === P2PKH_ADDRESS_VERSION || addr.prefix === P2SH_ADDRESS_VERSION;
+	}catch(e){
+		return false;
+	}
+}
+
 function fromPubKey(pubkey){
 	var keyHash = hash160(pubkey);
 	return base58check.encode(keyHash, P2PKH_ADDRESS_VERSION, 'hex');
@@ -22,6 +40,7 @@ function hash160(data){
 module.exports = {
 
 	fromPubKey: fromPubKey,
-	fromRedeemScript: fromRedeemScript
+	fromRedeemScript: fromRedeemScript,
+	validateAddress: validateAddress
 
 };
