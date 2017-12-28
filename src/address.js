@@ -41,6 +41,7 @@ module.exports = {
 
 	fromPubKey: fromPubKey,
 	fromRedeemScript: fromRedeemScript,
-	validateAddress: validateAddress
+	validateAddress: validateAddress,
+	toKeyHash: toKeyHash
 
 };
